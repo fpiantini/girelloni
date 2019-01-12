@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
 
   const pathName = url.parse(req.url, true).pathname;
 
-  //console.log(pathName);
+  console.log(pathName);
 
   // PRODUCT OVERVIEW -------------------------------------------------
   if (pathName === '/') {
@@ -35,7 +35,7 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(PORT, 'localhost', () => {
+server.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });
 
