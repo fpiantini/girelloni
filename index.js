@@ -1,6 +1,7 @@
 const fs = require('fs');
 const http = require('http');
 const url = require('url');
+const PORT = process.env.PORT || 5000
 
 const jsonData = fs.readFileSync(`${__dirname}/data/treks.json`, 'utf-8');
 
@@ -13,7 +14,7 @@ const server = http.createServer((req, res) => {
   const pathName = url.parse(req.url, true).pathname;
 
   console.log(pathName);
-  
+
   // PRODUCT OVERVIEW -------------------------------------------------
   if (pathName === '/') {
       res.writeHead(200, {'Content-type': 'text/html'});
@@ -26,7 +27,7 @@ const server = http.createServer((req, res) => {
       res.end(data);
     });
   }
-  
+
   // NOT FOUND -------------------------------------------------------
   else {
       res.writeHead(404, {'Content-type': 'text/html'});
@@ -34,7 +35,7 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(1337, 'localhost', () => {
+server.listen(PORT, 'localhost', () => {
   console.log('Server started');
 });
 
