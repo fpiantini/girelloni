@@ -1,0 +1,22 @@
+{
+  "name": "girelloni",
+  "version": "1.0.0",
+  "description": "A node.js application dedicated to trekking lovers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fpiantini/girelloni.git"
+  },
+  "keywords": [
+    "trekking"
+  ],
+  "author": "Francesco Piantini <francesco.piantini@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fpiantini/girelloni/issues"
+  },
+  "homepage": "https://github.com/fpiantini/girelloni#readme"
+}
