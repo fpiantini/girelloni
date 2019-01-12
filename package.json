@@ -2,8 +2,12 @@
   "name": "girelloni",
   "version": "1.0.0",
   "description": "A node.js application dedicated to trekking lovers",
+  "engines": {
+    "node": "10.x"
+  },
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
