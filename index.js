@@ -7,13 +7,13 @@ const jsonData = fs.readFileSync(`${__dirname}/data/treks.json`, 'utf-8');
 
 const trekData = JSON.parse(jsonData);
 
-console.log(trekData);
+//console.log(trekData);
 
 const server = http.createServer((req, res) => {
 
   const pathName = url.parse(req.url, true).pathname;
 
-  console.log(pathName);
+  //console.log(pathName);
 
   // PRODUCT OVERVIEW -------------------------------------------------
   if (pathName === '/') {
@@ -36,6 +36,6 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, 'localhost', () => {
-  console.log('Server started');
+  console.log(`Server started on port ${PORT}`);
 });
 
