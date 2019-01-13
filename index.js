@@ -20,6 +20,7 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, {'Content-type': 'text/html'});
 
     const nationsList = extractListOfNationsFromTrek(trekData);
+    console.log(nationsList);
     fs.readFile(`${__dirname}/pages/html_templates/template-mainpage.html`, 'utf-8', (err, data) => {
       let mainpageOutput = data;
       fs.readFile(`${__dirname}/pages/html_templates/template-nation.html`, 'utf-8', (err, data) => {
@@ -57,8 +58,9 @@ server.listen(PORT, () => {
 
 // ------------------------------------------------------------------------------------
 function extractListOfNationsFromTrek(trekData) {
-  // FIXME --- TO BE COMPLETED --- extract list of nations from trekData ---
-  return ['Italia', 'Islanda'];
+  let nations = [];
+  trekData.forEach(el => nations.includes(el.nation) || nations.push(el.nation));
+  return nations;
 }
 
 // ------------------------------------------------------------------------------------
