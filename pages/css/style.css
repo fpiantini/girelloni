@@ -1,0 +1,852 @@
+/* ********************************************************** *
+ * * * * * * * * * * * * * *~~* * * * * * * * * * * * * * * * *
+ *                                                            *
+ * PARTE 1. Definizioni di BASE                               *
+ *                                                            *
+ * * * * * * * * * * * * * *~~* * * * * * * * * * * * * * * * *
+ * ********************************************************** */
+
+/*
+ * Solarized theme colors:
+ * $base03:    #002b36;
+ * $base02:    #073642;
+ * $base01:    #586e75;
+ * $base00:    #657b83;
+ * $base0:     #839496;
+ * $base1:     #93a1a1;
+ * $base2:     #eee8d5;
+ * $base3:     #fdf6e3;
+ * $yellow:    #b58900;
+ * $orange:    #cb4b16;
+ * $red:       #dc322f;
+ * $magenta:   #d33682;
+ * $violet:    #6c71c4;
+ * $blue:      #268bd2;
+ * $cyan:      #2aa198;
+ * $green:     #859900;
+ */
+
+:root {
+  --solar-base03-color:    #002b36;   # dark: blue navy main color
+  --solar-base02-color:    #073642;
+  --solar-base01-color:    #586e75;
+  --solar-base00-color:    #657b83;
+  --solar-base0-color:     #839496;
+  --solar-base1-color:     #93a1a1;
+  --solar-base2-color:     #eee8d5;
+  --solar-base3-color:     #fdf6e3;
+  --solar-yellow-color:    #b58900;
+  --solar-orange-color:    #cb4b16;
+  --solar-red-color:       #dc322f;
+  --solar-magenta-color:   #d33682;
+  --solar-violet-color:    #6c71c4;
+  --solar-blue-color:      #268bd2;
+  --solar-cyan-color:      #2aa198;
+  --solar-green-color:     #859900;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    color: var(--solar-base3-color);
+    background-color: var(--solar-base03-color);
+    background-size: cover;
+    background-position: center;
+    font-family: Lato;
+    font-weight: 300;
+    position: relative;
+    height: 100vh;
+}
+
+/* per evitare che le immagini sbordino *
+ * quando la finestra e' troppo piccola */
+/* 
+al momento non utilizzato 
+div.imageready {
+  overflow: hidden;
+}
+*/
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * ~~~Text styles~~~                                         *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.header {
+  color: var(--solar-orange-color);
+  background-color: var(--solar-base2-color);
+  font-size: x-large;
+  /* color: white; */
+  /* background-color: #3E6035; */
+  border-radius: 10px;
+  margin: 20px;
+  padding-top: 0.2cm;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+  padding-bottom: 0.2cm;
+  text-align: center;
+}
+
+.footer {
+  /* color: var(--solar-orange-color); */
+  color: var(--solar-base03-color);
+  background-color: var(--solar-base2-color);
+  font-size: x-large;
+  border-radius: 10px;
+  margin: 20px;
+  padding-top: 0.2cm;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+  padding-bottom: 0.2cm;
+  text-align: center;
+}
+
+
+.divdark {
+  color: var(--solar-base3-color);
+  background-color: var(--solar-base01-color);
+  text-align: center;
+  /* text-transform: uppercase; */
+  margin: 20px;
+  border-radius: 10px;
+  padding-top: 0.2cm;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+  padding-bottom: 0.2cm;
+}
+
+.divlight {
+  color: var(--solar-blue-color);
+  background-color: var(--solar-base3-color);
+  text-align: center;
+  /* text-transform: uppercase; */
+  margin: 20px;
+  border-radius: 10px;
+  padding-top: 0.2cm;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+  padding-bottom: 0.2cm;
+}
+
+.divmap {
+  height: 100px;
+  font-size: x-small;
+  
+}
+
+#mapid {
+  height: 100px;
+  font-size: x-small;
+  
+}
+
+.description {
+  padding-top: 0.5cm;
+  font-size: x-large;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+.inevidence {
+  font-size: x-large;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+.inevidence-light {
+  font-size: x-large;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+.normal {
+  font-size: x-large;
+  font-weight: normal;
+}
+
+.italic {
+  font-size: x-large;
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+.hidden {
+  display: none;
+}
+
+#main-activities p {
+  padding-top: 0.3cm;
+  padding-bottom: 0.3cm;
+}
+
+#archive p {
+  padding-top: 0.2cm;
+  padding-bottom: 0.2cm;
+}
+
+
+
+a {
+  text-decoration: none;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.divlight a {
+  color: var(--solar-orange-color);
+}
+
+.divdark a {
+  /* font-variant: small-caps; */
+  color: var(--solar-base3-color);
+}
+
+.divmap a {
+  font-size: x-small;
+  color: black;
+  
+}
+
+.header a  {
+  color: var(--solar-orange-color);
+  background-color: var(--solar-base2-color);
+  font-size: xx-large;
+  border-radius: 10px;
+  /* margin: 20px; */
+  /* padding-top: 0.2cm;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+  padding-bottom: 0.2cm; */
+  text-align: center;
+
+}
+
+.mapLayerChooser {
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  /* the following are necessary to have the legend centered
+  https://stackoverflow.com/questions/23377769/fieldset-center-legend
+  */
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+/* unvisited link */
+a:link {
+}
+
+/* visited link */
+a:visited {
+}
+
+/* mouse over link */
+a:hover {
+  /* text-transform: uppercase; */
+  /*font-weight: 2000;
+  letter-spacing: 1px;*/
+  margin-right: 10px;
+}
+
+/* selected link */
+a:active {
+}
+
+.divmap a:hover {
+  margin-right: 0;
+  
+}
+
+
+
+
+
+
+/*
+p {
+  font-size: small;
+  padding-left: 0.5cm;
+  padding-bottom: 0cm;
+  padding-top: 0cm;
+  padding-right: 1cm;
+  margin-bottom: 0.4cm;
+  margin-top: 0cm;
+}
+*/
+
+h1 {
+}
+
+h2 {
+  font-size: large;
+  padding-top: 0.2cm;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+  padding-bottom: 0.2cm;
+  /* padding-left: 1cm; */
+}
+
+h3 {
+  font-size: small;
+  font-style: italic;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+  padding-bottom: 0.2cm;
+}
+
+h4 {
+  font-size: small;
+  font-style: italic;
+}
+
+ul {
+  font-size: small;
+  /* margin-left: 1cm; */
+  margin-bottom: 0.5cm;
+}
+
+ol {
+  font-size: small;
+  /* margin-left: 1cm; */
+  margin-bottom: 0.5cm;
+}
+
+li {
+   margin-top: 0.3cm;
+   margin-bottom: 0.3cm;
+}
+
+/* Stile speciale per carattere sottolineato.    *
+ * Funziona, ma da problemi con XHTML strict     *
+ * per cui per il momento non lo sto utilizzando */
+under {
+  text-decoration: underline;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * ~~~Tables styles~~~                                       *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*
+table {
+   margin-top: 0.3cm;
+   margin-bottom: 0.3cm;
+   border-collapse: collapse;
+   border-style: solid;
+}
+
+caption {
+   padding-top: 0.2cm;
+   padding-bottom: 0.2cm;
+   background-color: #C7C28B;
+   font-size: large;
+}
+
+tr {
+   border-style: solid;
+   border-width: thin;
+}
+
+th {
+   padding: 0.3cm;
+   text-align: left;
+   border-style: solid;
+   border-width: thin;
+   background-color: #D2CFA2;
+}
+
+td {
+   padding: 0.2cm;
+   font-size: small;
+   border-style: solid;
+   border-width: thin;
+}
+*/
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * ~~~div/span~~~                                            *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+div {
+}
+
+span {
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * ~~~IDs used for "div"~~~                                  *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+div#leftmenu {
+  position: absolute;
+  width: 165px;
+  left: 10px;
+  top: 80px;
+  /* background-color: #ffffbb; */
+  background: #aa7 url(img/sandydogsear.png) bottom right no-repeat;
+}
+
+body>div#leftmenu {
+  position: fixed;
+}
+
+div#leftmenu h2 {
+   font-size: medium;
+   font-weight: bolder;
+   padding-left: 0.5cm;  
+}
+
+div#leftmenu p {
+   font-size: medium;
+   padding-left: 0.5cm;  
+}
+
+div#leftmenu a:link, div#leftmenu a:visited
+{
+  font-style: italic;
+  text-decoration: none;
+  color: white;
+}
+
+div#leftmenu a:hover {
+  background: #CCC;
+  color: black;
+}
+
+div#leftmenu_large {
+  position: absolute;
+  width: 210px;
+  left: 10px;
+  top: 80px;
+  /* background-color: #ffffbb; */
+  background: #aa7 url(img/sandydogsear.png) bottom right no-repeat;
+}
+
+body>div#leftmenu_large {
+  position: fixed;
+}
+
+div#leftmenu_large h2 {
+   font-size: medium;
+   font-weight: bolder;
+   padding-left: 0.5cm;  
+}
+
+div#leftmenu_large p {
+   font-size: medium;
+   padding-left: 0.5cm;  
+}
+
+div#leftmenu_large a:link, div#leftmenu_large a:visited
+{
+  font-style: italic;
+  text-decoration: none;
+  color: white;
+}
+
+div#leftmenu_large a:hover {
+  background: #CCC;
+  color: black;
+}
+
+div#bodywithmenu {
+  margin-left: 175px;
+}
+
+div#bodywithlargemenu {
+  margin-left: 220px;
+}
+
+div.code {
+  background-color: #FFFFFF;
+  padding-top: 0.5cm;
+  padding-bottom: 0.5cm;
+  margin-top: 0.5cm;
+  margin-bottom: 0.5cm;
+  font-family: courier, sans-serif;
+  font-weight: bolder;
+  margin-left: 1cm;
+  padding-left: 0.5cm;
+  margin-right: 10%;
+  padding-right: 0.5cm;
+
+}
+
+/*
+ * Classi utilizzate all'interno delle sezioni <div class="code">
+ * per intentare diversi livelli di codice
+ */
+div.code > p {
+  padding-top: 0cm;
+  margin-top: 0cm;
+  padding-left: 0cm;
+  margin-left: 0cm;
+  padding-right: 0cm;
+  margin-right: 0cm;
+  padding-bottom: 0cm;
+  margin-bottom: 0cm;
+}
+
+div.code > p.tab1 {
+  margin-left:1.0cm;
+}
+
+div.code > p.tab2 {
+  margin-left:2.0cm;
+}
+
+div.code > p.tab3 {
+  margin-left:3.0cm;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * ~~~links~~~                                               *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*
+ * Removes the border from images used as link
+ */
+a img {
+   border: none;  
+}
+
+/* ********************************************************** *
+ * * * * * * * * * * * * * *~~* * * * * * * * * * * * * * * * *
+ *                                                            *
+ * PARTE 2. CLASSI GENERALI                                   *
+ *                                                            *
+ * * * * * * * * * * * * * *~~* * * * * * * * * * * * * * * * *
+ * ********************************************************** */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * ~~~Mainly textual~~~                                      *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.centered {
+   text-align: center;
+}
+
+.indented {
+   text-indent: 1cm;
+}
+
+.blackpen {
+   color: black;
+}
+
+.indentright {
+  text-align: right;
+}
+.indentcenter {
+  text-align: center;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * ~~~For tables~~~                                          *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.withborder {
+   /* border: '1pt solid black'; */
+   
+   border-style: double;        /* Valori ammessi:
+                                    dotted, dashed, solid,
+                                    double, groove, ridge,
+                                    inset,outset  
+                                    Esiste anche la possibilita'
+                                    di dare forme diverse ai bordi
+                                    superiori/inferiori e laterali */
+  border-color: #0000ff;
+  border-bottom-width: 15px;
+  border-left-width: 15px;
+}
+
+.withmargin {
+   margin-top: 0.5cm;
+   margin-left: 1cm;
+   margin-right: 1cm; 
+   margin-bottom: 0.5cm;
+}
+
+.corsivo {
+   font-style: italic;   
+}
+
+/* ********************************************************** *
+ * * * * * * * * * * * * * *~~* * * * * * * * * * * * * * * * *
+ *                                                            *
+ * PARTE 3. CLASSI SPECIFICHE                                 *
+ *                                                            *
+ * * * * * * * * * * * * * *~~* * * * * * * * * * * * * * * * *
+ * ********************************************************** */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * ~~~Paragraphs~~~                                          *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+p.sansserif {
+   font-family: sans-serif;
+}
+
+p.increase {
+   line-height: 1cm;
+}
+
+p.route  {
+  background-color: #B5B066;
+  margin-top: 0cm;
+  margin-bottom: 0.5cm;
+  padding-top: 0cm;
+  padding-left: 0.4cm;
+  padding-bottom: 0cm;
+
+}
+
+p.footer {
+  margin-bottom: 0.1cm;
+  padding-top: 0.1cm;
+  padding-left: 0.1cm;
+  padding-right: 0.1cm;
+  text-align: center;
+  vertical-align: text-top;
+}
+
+p.note {
+  margin-left: 2cm;
+  margin-right: 2cm;
+  margin-bottom: 0.6cm;
+  font-style: italic;
+}
+
+p.command, p.singlecode, p.code, p.codefirst, p.codelast, p.code_ind1 {
+  font-family: courier, sans-serif;
+  font-weight: bolder;
+  margin-left: 1cm;
+}
+
+p.codefirst {
+  margin-top: 0.5cm;
+  margin-bottom: 0cm;
+}
+p.code, p.code_ind1 {
+  margin-top: 0cm;
+  margin-bottom: 0cm;
+}
+p.code_ind1 { 
+  margin-left:1.5cm;
+}
+
+p.codelast {
+  margin-top: 0cm;
+  margin-bottom: 0.5cm;
+}
+
+p.frasefatta {
+  width: 12cm;
+  font-style: italic;
+  background-color: #A5B892;
+  color: maroon;
+  padding-top: 0.2cm;
+  padding-left: 0.4cm;
+  padding-bottom: 0.4cm;
+  padding-right: 0.2cm;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+p.compact {
+  margin-bottom: 0cm;
+  margin-top: 0cm;
+}
+
+p.pagelinkslist {
+  white-space: pre;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * ~~~Tables~~~                                              *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Toplevel table class: used as base for pages */
+table.noborder {
+   border-collapse: collapse;
+   border-style: none;
+   border-width: 0pt;
+}
+
+/* * * * * * Table cells * * * * * */
+/* Di default table items sono senza bordo e baseline-aligned */
+td.noborder {
+   border-style: none;
+   border-width: 0pt;
+   vertical-align: baseline;
+}
+
+td.titlerow {
+   background-color: #006633;
+}
+
+td.leftshaded {
+   background-color: #006633;
+   vertical-align: top;
+}
+
+td.separator {
+   background-color: #228855;  
+}
+
+td.doctechbody {
+   color: black;
+   background-color: white;
+}
+
+table.photogallery {
+   /* table-layout: fixed; */
+   /* width: 360px;  */
+   /* height: 480px; */
+   /* margin: 0cm; */
+   /* padding: 0cm; */
+
+   /* float: none; */
+   /* clear: none; */
+
+   /* border-collapse: separate; */
+   border-style: none;
+   /* border: 0cm; */
+   
+   color: black;
+   background-color: transparent; /* #AEC4D7;*/
+}
+
+td.photosnap {
+
+   width: 120px;
+   height: 120px;
+
+   color: black;
+   background-color: transparent; /* #AEC4D7;*/
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * ~~~Unordered lists items~~~                               *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+ul.disc {
+   list-style-type: disc;
+}
+ul.circle {
+   list-style-type: circle;
+}
+ul.square {
+   list-style-type: square;
+}
+ul.withball {
+   list-style-image: url("../images/ball3.gif");
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * ~~~Ordered lists items~~~                                 *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+ol.decimal {
+   list-style-type: decimal;
+}
+ol.lroman {
+   list-style-type: lower-roman
+}
+ol.uroman {
+   list-style-type: upper-roman
+}
+ol.lalpha {
+   list-style-type: lower-alpha
+}
+ol.ualpha {
+   list-style-type: upper-alpha
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * ~~~Images~~~                                              *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Image dimension */
+img.normal {
+   height: auto;
+   width: auto;
+}
+img.big {
+   height: 80px;
+   width: 100px;
+}
+img.small {
+   height: 30px;
+   width: 50px;
+}
+
+img.leftfloat {
+   float: left;
+   margin-right: 20px;
+}
+img.rightfloat {
+   float: right;
+   margin-left: 20px;
+}
+
+img.autowidth {
+  width: 100%;
+}
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * ~~~Hyperlinks~~~                                          *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+a:link.mainmenu {
+   font-weight: bolder;
+   color: yellow
+}
+
+a:visited.mainmenu {
+   font-weight: bolder;
+   color: white;
+}
+
+a:link.secondarylist {
+   color: #006633;
+}
+
+a:visited.secondarylist {
+   color: black;
+}
+
+/* Aggiunti per Chessbase */
+.e1b {font-size:12pt;  font-style: normal; text-decoration: none}
+.e0 {color: 000000; font-size:12pt;  font-style: normal; text-decoration: none}
+.e1 {color: #000000; font-size:12pt;  font-style: normal; text-decoration: none}
+.e2 {color: #000000; font-size:12pt;  font-style: normal; text-decoration: none}
+.e3 {color: #000000; font-size:12pt;  font-style: normal; text-decoration: none}
+.e4 {color: #000000; font-size:12pt;  font-style: normal; text-decoration: none}
+.game {font-size:12pt;  font-style: normal;}
+
+/***************************************************************
+ * TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST *
+ ***************************************************************/
+/* stili utilizzati da provecss.html */
+div#testbody {
+  /* display: inline; */ /* questo non serve: display di default e' inline */
+  width: 6.5cm;
+  direction: rtl;
+  background-color: #A5B892;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  margin-bottom: 0.5cm;
+}
+
+p.testcite {
+  /* width: 6.5cm; */
+  text-align: center;
+  margin-top: 0.2cm;
+  margin-left: 0.4cm;
+  margin-bottom: 0.4cm;
+  margin-right: 0.2cm;
+  color: maroon;
+  font-style: italic;
+}
+
